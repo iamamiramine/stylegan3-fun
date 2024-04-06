@@ -1,0 +1,7 @@
+python dataset_tool.py --source=./datasets/lhq_256 --dest=./datasets/lhq_256.zip
+
+python train.py --outdir=./training-runs --cfg=stylegan3-t --data=./datasets/lhq_256.zip --gpus=1 --batch=32 --gamma=8.2 --mirror=1 --blur-percent=0.5 --mirrory=1 
+
+python run_spout.py --seed 1 --network network/network-snapshot-000400.pkl
+
+python run_spout.py --seed 1 --network stylegan3-r-afhqv2-512x512.pkl
