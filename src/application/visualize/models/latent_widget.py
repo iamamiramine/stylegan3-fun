@@ -8,8 +8,8 @@
 
 import numpy as np
 import imgui
-import dnnlib
-from infrastructure.gui_utils import imgui_utils
+from src.infrastructure import dnnlib
+from src.infrastructure.gui_utils import imgui_utils
 
 
 #----------------------------------------------------------------------------

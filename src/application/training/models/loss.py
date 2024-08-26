@@ -10,8 +10,8 @@
 
 import numpy as np
 import torch
-from infrastructure.torch_utils import training_stats
-from infrastructure.torch_utils.ops import conv2d_gradfix, upfirdn2d
+from src.infrastructure.torch_utils import training_stats
+from src.infrastructure.torch_utils.ops import conv2d_gradfix, upfirdn2d
 
 
 #----------------------------------------------------------------------------

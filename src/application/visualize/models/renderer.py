@@ -14,9 +14,9 @@ import torch
 import torch.fft
 import torch.nn
 import matplotlib.cm
-import dnnlib
-from infrastructure.torch_utils.ops import upfirdn2d
-from infrastructure import legacy
+from src.infrastructure import dnnlib
+from src.infrastructure.torch_utils.ops import upfirdn2d
+from application.network.services import legacy_service
 
 
 #----------------------------------------------------------------------------
@@ -155,7 +155,7 @@ class Renderer:
         if data is None:
             print(f'Loading "{pkl}"... ', end='', flush=True)
             try:
-                with infrastructure.dnnlib.util.open_url(pkl, verbose=False) as f:
+                with dnnlib.util.open_url(pkl, verbose=False) as f:
                     data = legacy.load_network_pkl(f)
                 print('Done.')
             except:

@@ -11,8 +11,8 @@ import re
 import numpy as np
 import imgui
 import PIL.Image
-from infrastructure.gui_utils import imgui_utils
-from application.visualize.models import renderer
+from src.infrastructure.gui_utils import imgui_utils
+from src.application.visualize.models import renderer
 
 
 #----------------------------------------------------------------------------

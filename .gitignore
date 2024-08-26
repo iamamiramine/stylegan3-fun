@@ -70,7 +70,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+../docs/_build/
 
 # PyBuilder
 .pybuilder/
@@ -165,9 +165,9 @@ cython_debug/
 
 # SGAN specific folders
 datasets/
+output/
+
 dlatents/
-out/
-training-runs/
 pretrained/
 video/
 _screenshots/

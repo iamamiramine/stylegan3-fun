@@ -10,11 +10,11 @@ import glob
 import os
 import re
 
-import dnnlib
+from src.infrastructure import dnnlib
 import imgui
-from infrastructure.gui_utils import imgui_utils
+from src.infrastructure.gui_utils import imgui_utils
 
-from application.visualize.models import renderer
+from src.application.visualize.models import renderer
 
 
 #----------------------------------------------------------------------------
@@ -150,7 +150,7 @@ class PickleWidget:
         assert pattern != ''
 
         # URL => return as is.
-        if infrastructure.dnnlib.util.is_url(pattern):
+        if dnnlib.util.is_url(pattern):
             return pattern
 
         # Short-hand pattern => locate.

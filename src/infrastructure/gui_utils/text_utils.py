@@ -16,11 +16,13 @@ import scipy.ndimage
 
 from . import gl_utils
 
+from src.infrastructure import dnnlib
+
 #----------------------------------------------------------------------------
 
 def get_default_font():
     url = 'http://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-U1UpcaXcl0Aw.ttf' # Open Sans regular
-    return infrastructure.dnnlib.util.open_url(url, return_filename=True)
+    return dnnlib.util.open_url(url, return_filename=True)
 
 #----------------------------------------------------------------------------
 

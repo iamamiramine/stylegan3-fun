@@ -7,7 +7,7 @@
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
 
 import imgui
-from infrastructure.gui_utils import imgui_utils
+from src.infrastructure.gui_utils import imgui_utils
 
 
 #----------------------------------------------------------------------------

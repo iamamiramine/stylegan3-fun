@@ -1,19 +1,13 @@
-# Copyright (c) 2021, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION is strictly prohibited.
+FROM pytorch/pytorch:2.2.1-cuda12.1-cudnn8-devel
 
-FROM nvcr.io/nvidia/pytorch:21.08-py3
+WORKDIR /app
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+COPY ./requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install imageio imageio-ffmpeg==0.4.4 pyspng==0.1.0
+RUN apt update
 
-WORKDIR /workspace
+COPY ./src ./src
+COPY ./app.py ./app.py
 
-RUN (printf '#!/bin/bash\nexec \"$@\"\n' >> /entry.sh) && chmod a+x /entry.sh
-ENTRYPOINT ["/entry.sh"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]

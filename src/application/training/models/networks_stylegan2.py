@@ -13,8 +13,8 @@ https://github.com/NVlabs/stylegan2/blob/master/training/networks_stylegan2.py""
 
 import numpy as np
 import torch
-from infrastructure.torch_utils import misc, persistence
-from infrastructure.torch_utils.ops import conv2d_resample, bias_act, upfirdn2d, fma
+from src.infrastructure.torch_utils import misc, persistence
+from src.infrastructure.torch_utils.ops import conv2d_resample, bias_act, upfirdn2d, fma
 
 
 #----------------------------------------------------------------------------

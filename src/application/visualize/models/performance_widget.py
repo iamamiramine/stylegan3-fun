@@ -9,7 +9,7 @@
 import array
 import numpy as np
 import imgui
-from infrastructure.gui_utils import imgui_utils
+from src.infrastructure.gui_utils import imgui_utils
 
 
 #----------------------------------------------------------------------------

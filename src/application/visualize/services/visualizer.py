@@ -6,14 +6,16 @@
 # distribution of this software and related documentation without an express
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
 
+# TODO: Change arguments to parameters for API
+
 import click
 
 import multiprocessing
 import numpy as np
 import imgui
-import dnnlib
-from infrastructure.gui_utils import imgui_utils, gl_utils, text_utils, imgui_window
-from application.visualize.models import capture_widget, equivariance_widget, pickle_widget, latent_widget, renderer, trunc_noise_widget, layer_widget, performance_widget, \
+from src.infrastructure import dnnlib
+from src.infrastructure.gui_utils import imgui_utils, gl_utils, text_utils, imgui_window
+from src.application.visualize.models import capture_widget, equivariance_widget, pickle_widget, latent_widget, renderer, trunc_noise_widget, layer_widget, performance_widget, \
     class_widget, stylemix_widget
 
 

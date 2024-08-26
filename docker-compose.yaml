@@ -1,0 +1,24 @@
+version: '2.3'
+
+services:
+  stylegan3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: stylegan3
+    container_name: stylegan3-container
+    environment:
+      NVIDIA_VISIBLE_DEVICES: "0"
+      MKL_SERVICE_FORCE_INTEL: "1"
+    ports:
+      - "8000:80"
+    volumes:
+      - ./datasets:/app/datasets
+      - ./output:/app/output
+    runtime: nvidia
+    networks:
+      - stylegan3-network
+
+networks:
+ stylegan3-network:
+    external: true

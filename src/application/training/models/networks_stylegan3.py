@@ -13,8 +13,8 @@ import numpy as np
 import scipy.signal
 import scipy.optimize
 import torch
-from infrastructure.torch_utils import misc, persistence
-from infrastructure.torch_utils.ops import filtered_lrelu, conv2d_gradfix, bias_act
+from src.infrastructure.torch_utils import misc, persistence
+from src.infrastructure.torch_utils.ops import filtered_lrelu, conv2d_gradfix, bias_act
 
 
 #----------------------------------------------------------------------------

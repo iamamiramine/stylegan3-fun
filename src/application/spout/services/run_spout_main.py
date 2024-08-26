@@ -16,10 +16,11 @@ import click
 import numpy as np
 import torch
 
-from infrastructure import legacy
+from src.infrastructure import dnnlib
+from application.network.services import legacy_service
 
-from application.visualize.models.renderer import Renderer
-from infrastructure.torch_utils import gen_utils
+from src.application.visualize.models.renderer import Renderer
+from src.infrastructure.torch_utils import gen_utils
 
 def parse_range(s: Union[str, List]) -> List[int]:
     '''Parse a comma separated list of numbers or ranges and return a list of ints.
@@ -110,8 +111,8 @@ def main(
 
     print('Loading networks from "%s"...' % network_pkl)
     device = torch.device('cuda')
-    with infrastructure.dnnlib.util.open_url(network_pkl) as f:
-        G = legacy.load_network_pkl(f)['G_ema'].to(device) # type: ignore
+    with dnnlib.util.open_url(network_pkl) as f:
+        G = legacy_service.load_network_pkl(f)['G_ema'].to(device) # type: ignore
 
     outdir = 'out'
     os.makedirs(outdir, exist_ok=True)
